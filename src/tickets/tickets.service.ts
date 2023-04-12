@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { CreateTicketDto } from './dtos/createTicket.dto';
 import { Ticket } from './ticket.entity';
@@ -6,7 +7,7 @@ import { Ticket } from './ticket.entity';
 export class TicketsService {
 
     async createTicket(createTicketDto: CreateTicketDto){
-        const ticket = Ticket.create(createTicketDto);
+        const ticket = Ticket.create({...createTicketDto, status: 'Pending'});
         return await ticket.save();
     }
 

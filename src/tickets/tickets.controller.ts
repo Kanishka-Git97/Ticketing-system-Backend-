@@ -7,12 +7,12 @@ export class TicketsController {
   constructor(private readonly ticketsService: TicketsService) {}
 
   @Post()
-  create(@Body() createTicketDto: CreateTicketDto){
+  create(@Body() createTicketDto: CreateTicketDto) {
     return this.ticketsService.createTicket(createTicketDto);
   }
 
   @Get()
-  findAll(){
+  findAll() {
     return this.ticketsService.findTickets();
   }
 

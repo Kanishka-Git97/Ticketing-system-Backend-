@@ -13,7 +13,7 @@ export class Ticket extends BaseEntity{
     project: string;
 
     @Column()
-    resources: string;
+    reasons: string;
 
     @Column()
     priority: number;
